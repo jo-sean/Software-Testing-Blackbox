@@ -11,7 +11,7 @@ class TestCase(unittest.TestCase):
 
     def test_empty(self):
         empty_string = ""
-        self.assertTrue(credit_card_validator(empty_string), msg=''.format(credit_card_validator(empty_string)))
+        self.assertFalse(credit_card_validator(empty_string), msg=''.format(credit_card_validator(empty_string)))
 
 
 if __name__ == '__main__':
