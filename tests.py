@@ -10,54 +10,72 @@ class TestCase(unittest.TestCase):
     """Unittest to find 6 bugs in the credit_card_validator func"""
 
     # Length related tests
+
+    # Verifies if empty string returns False
+    # Picked using Category Partition Testing
     def test1_empty(self):
         empty_string = ""
         self.assertFalse(credit_card_validator(empty_string),
                          msg=''.format(credit_card_validator(empty_string)))
 
-
+    # Verifies if Visa Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test2_vs_length_short(self):
         # Check and prefix are valid; length is 15
         vs_short = "458265486521145"
         self.assertFalse(credit_card_validator(vs_short),
                          msg=''.format(credit_card_validator(vs_short)))
 
+    # Verifies if Visa Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test3_vs_length_long(self):
         # Check and prefix are valid; length is 17
         vs_long = "45826548652114211"
         self.assertFalse(credit_card_validator(vs_long),
                          msg=''.format(credit_card_validator(vs_long)))
 
+    # Verifies if Master Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test4_mc_51_55_length_short(self):
         # Check and prefix are valid; length is 15
         mc_short = "528265486521141"
         self.assertFalse(credit_card_validator(mc_short),
                          msg=''.format(credit_card_validator(mc_short)))
 
+    # Verifies if Master Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test5_mc_51_55_length_long(self):
         # Check and prefix are valid; length is 17
         mc_long = "52826548652114142"
         self.assertFalse(credit_card_validator(mc_long),
                          msg=''.format(credit_card_validator(mc_long)))
 
+    # Verifies if Master Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test6_mc_2221_2720_length_short(self):
         # Check and prefix are valid; length is 15
         mc_short = "222284758956231"
         self.assertFalse(credit_card_validator(mc_short),
                          msg=''.format(credit_card_validator(mc_short)))
 
+    # Verifies if Master Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test7_mc_2221_2720_length_long(self):
         # Check and prefix are valid; length is 17
         mc_long = "22228475895623548"
         self.assertFalse(credit_card_validator(mc_long),
                          msg=''.format(credit_card_validator(mc_long)))
 
+    # Verifies if American Express Cards with invalid lengths returns False
+    # Picked using Boundary Testing
     def test8_ae_length_short(self):
         # Check and prefix are valid; length is 14
         ae_short = "34826548652111"
         self.assertFalse(credit_card_validator(ae_short),
                          msg=''.format(credit_card_validator(ae_short)))
 
+    # Verifies if American Express with invalid lengths returns False
+    # Picked using Boundary Testing
     def test9_ae_length_long(self):
         # Check and prefix are valid; length is 16
         ae_long = "3482654865211135"
@@ -65,24 +83,33 @@ class TestCase(unittest.TestCase):
                          msg=''.format(credit_card_validator(ae_long)))
 
     # Everything is valid
+
+    # Verifies if Visa Cards with everything valid returns True
+    # Picked using Category Partition Testing
     def test10_vs_valid_length(self):
         # Check and prefix are valid; length is 16
         vs_valid = "4582654865211421"
         self.assertTrue(credit_card_validator(vs_valid),
                         msg=''.format(credit_card_validator(vs_valid)))
 
+    # Verifies if Master Cards with everything valid returns True
+    # Picked using Category Partition Testing
     def test11_mc_51_55_valid_length(self):
         # Check and prefix are valid; length is 16
         mc_valid = "5282654865211413"
         self.assertTrue(credit_card_validator(mc_valid),
                         msg=''.format(credit_card_validator(mc_valid)))
 
+    # Verifies if Master Cards with everything valid returns True
+    # Picked using Category Partition Testing
     def test12_mc_2221_2720_valid_length(self):
         # Check and prefix are valid; length is 16
         mc_valid = "2222847589562356"
         self.assertTrue(credit_card_validator(mc_valid),
                         msg=''.format(credit_card_validator(mc_valid)))
 
+    # Verifies if American Express Cards with everything valid returns True
+    # Picked using Category Partition Testing
     def test13_ae_valid_length(self):
         # Check and prefix are valid; length is 15
         ae_valid = "348265486521123"
@@ -90,6 +117,9 @@ class TestCase(unittest.TestCase):
                         msg=''.format(credit_card_validator(ae_valid)))
 
     # Prefix related tests
+
+    # Verifies if Visa Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test14_vs_low_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
         # (but no conflicts with other ranges)
@@ -97,70 +127,123 @@ class TestCase(unittest.TestCase):
         self.assertFalse(credit_card_validator(vs_l_prefix),
                          msg=''.format(credit_card_validator(vs_l_prefix)))
 
+    # Verifies if Visa Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test15_vs_upper_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 5 for visa
         # (but no conflicts with other ranges)
         vs_u_prefix = "5782654865211251"
         self.assertFalse(credit_card_validator(vs_u_prefix),
                          msg=''.format(credit_card_validator(vs_u_prefix)))
 
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test16_mc_51_55_low_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 50 for Master Card
         # (but no conflicts with other ranges)
-        vs_l_prefix = "5082654865211258"
-        self.assertFalse(credit_card_validator(vs_l_prefix),
-                         msg=''.format(credit_card_validator(vs_l_prefix)))
+        mc_l_prefix = "5082654865211258"
+        self.assertFalse(credit_card_validator(mc_l_prefix),
+                         msg=''.format(credit_card_validator(mc_l_prefix)))
 
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test17_mc_51_55_upper_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 56 for Master Card
         # (but no conflicts with other ranges)
-        vs_u_prefix = "5682654865211252"
-        self.assertFalse(credit_card_validator(vs_u_prefix),
-                         msg=''.format(credit_card_validator(vs_u_prefix)))
+        mc_u_prefix = "5682654865211252"
+        self.assertFalse(credit_card_validator(mc_u_prefix),
+                         msg=''.format(credit_card_validator(mc_u_prefix)))
 
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test18_mc_2221_2720_low_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 2220 for Master Card
         # (but no conflicts with other ranges)
-        vs_l_prefix = "2220654865211258"
-        self.assertFalse(credit_card_validator(vs_l_prefix),
-                         msg=''.format(credit_card_validator(vs_l_prefix)))
+        mc_l_prefix = "2220654865211258"
+        self.assertFalse(credit_card_validator(mc_l_prefix),
+                         msg=''.format(credit_card_validator(mc_l_prefix)))
 
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test19_mc_2221_2720_upper_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 2721 for Master Card
         # (but no conflicts with other ranges)
-        vs_u_prefix = "2721654865211252"
-        self.assertFalse(credit_card_validator(vs_u_prefix),
-                         msg=''.format(credit_card_validator(vs_u_prefix)))
+        mc_u_prefix = "2721654865211252"
+        self.assertFalse(credit_card_validator(mc_u_prefix),
+                         msg=''.format(credit_card_validator(mc_u_prefix)))
 
+    # Verifies if American Express Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test20_ae_34_low_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 33 for American Express Card
         # (but no conflicts with other ranges)
-        vs_l_prefix = "3382654865211250"
-        self.assertFalse(credit_card_validator(vs_l_prefix),
-                         msg=''.format(credit_card_validator(vs_l_prefix)))
+        ae_l_prefix = "338265486521125"
+        self.assertFalse(credit_card_validator(ae_l_prefix),
+                         msg=''.format(credit_card_validator(ae_l_prefix)))
 
+    # Verifies if American Express Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test21_ae_34_upper_prefix(self):
-        # Check and length are valid; prefix starts with 3 for visa
+        # Check and length are valid; prefix starts with 35 for American Express Card
         # (but no conflicts with other ranges)
-        vs_u_prefix = "5782654865211251"
-        self.assertFalse(credit_card_validator(vs_u_prefix),
-                         msg=''.format(credit_card_validator(vs_u_prefix)))
+        ae_u_prefix = "358265486521120"
+        self.assertFalse(credit_card_validator(ae_u_prefix),
+                         msg=''.format(credit_card_validator(ae_u_prefix)))
 
+    # Verifies if American Express Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test22_ae_37_low_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
         # (but no conflicts with other ranges)
-        vs_l_prefix = "3682654865211257"
-        self.assertFalse(credit_card_validator(vs_l_prefix),
-                         msg=''.format(credit_card_validator(vs_l_prefix)))
+        ae_l_prefix = "368265486521128"
+        self.assertFalse(credit_card_validator(ae_l_prefix),
+                         msg=''.format(credit_card_validator(ae_l_prefix)))
 
+    # Verifies if American Express Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
     def test23_ae_37_upper_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
         # (but no conflicts with other ranges)
-        vs_u_prefix = "3882654865211255"
-        self.assertFalse(credit_card_validator(vs_u_prefix),
-                         msg=''.format(credit_card_validator(vs_u_prefix)))
+        ae_u_prefix = "388265486521124"
+        self.assertFalse(credit_card_validator(ae_u_prefix),
+                         msg=''.format(credit_card_validator(ae_u_prefix)))
 
     # Check digit related tests
+
+    # Verifies if Visa Cards with invalid check, valid prefix and length returns False
+    # Picked using Category Partition Testing
+    def test24_vs_check(self):
+        vs_check = "4582654865211455"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
+
+    # Verifies if Master Cards with invalid check, valid prefix and length returns False
+    # Picked using Category Partition Testing
+    def test25_mc_51_55_check(self):
+        vs_check = "5282654865211455"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
+
+    # Verifies if Master Cards with invalid check, valid prefix and length returns False
+    # Picked using Category Partition Testing
+    def test26_mc_2221_2720_check(self):
+        vs_check = "2222654865211455"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
+
+    # Verifies if American Express Cards with invalid check, valid prefix and length returns False
+    # Picked using Category Partition Testing
+    def test27_ae_34_check(self):
+        vs_check = "3422654865211451"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
+
+    # Verifies if American Express Cards with invalid check, valid prefix and length returns False
+    # Picked using Category Partition Testing
+    def test28_ae_37_check(self):
+        vs_check = "3722654865211457"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
 
 
 if __name__ == '__main__':
