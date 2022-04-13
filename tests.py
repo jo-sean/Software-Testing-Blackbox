@@ -255,13 +255,13 @@ class TestCase(unittest.TestCase):
 
     # Combinations
 
-    # Verifies if American Express with invalid lengths returns False
+    # Verifies if Visa Card with invalid lengths and check returns False
     # Picked using Boundary Testing
-    def test30_ae_length_long_check(self):
+    def test30_vs_length_long_check(self):
         # Prefix is valid; length is 16, check is invalid
-        ae_combo = "3722564865211459"
-        self.assertFalse(credit_card_validator(ae_combo),
-                         msg=''.format(credit_card_validator(ae_combo)))
+        vs_combo = "45826548652114212"
+        self.assertFalse(credit_card_validator(vs_combo),
+                         msg=''.format(credit_card_validator(vs_combo)))
 
 
 if __name__ == '__main__':
