@@ -228,7 +228,7 @@ class TestCase(unittest.TestCase):
 
     # Check digit related tests
 
-    # Verifies if Visa Cards with invalid check, valid prefix and length 
+    # Verifies if Visa Cards with invalid check, valid prefix and length
     # returns False
     # Picked using Category Partition Testing
     def test25_vs_check(self):
@@ -236,7 +236,7 @@ class TestCase(unittest.TestCase):
         self.assertFalse(credit_card_validator(vs_check),
                          msg=''.format(credit_card_validator(vs_check)))
 
-    # Verifies if Master Cards with invalid check, valid prefix and length 
+    # Verifies if Master Cards with invalid check, valid prefix and length
     # returns False
     # Picked using Category Partition Testing
     def test26_mc_51_55_check(self):
@@ -288,7 +288,7 @@ class TestCase(unittest.TestCase):
         self.assertFalse(credit_card_validator(vs_u_prefix),
                          msg=''.format(credit_card_validator(vs_u_prefix)))
 
-    # Verifies if Master Cards with boundaries with everything else valid 
+    # Verifies if Master Cards with boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test32_mc_51_55_low_prefix(self):
@@ -298,7 +298,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(mc_l_prefix),
                         msg=''.format(credit_card_validator(mc_l_prefix)))
 
-    # Verifies if Master Cards boundaries with everything else valid 
+    # Verifies if Master Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test33_mc_51_55_upper_prefix(self):
@@ -308,7 +308,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(mc_u_prefix),
                         msg=''.format(credit_card_validator(mc_u_prefix)))
 
-    # Verifies if Master Cards boundaries with everything else valid 
+    # Verifies if Master Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test34_mc_2221_2720_low_prefix(self):
@@ -318,7 +318,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(mc_l_prefix),
                         msg=''.format(credit_card_validator(mc_l_prefix)))
 
-    # Verifies if Master Cards boundaries with everything else valid 
+    # Verifies if Master Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test35_mc_2221_2720_upper_prefix(self):
@@ -328,7 +328,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(mc_u_prefix),
                         msg=''.format(credit_card_validator(mc_u_prefix)))
 
-    # Verifies if AmEx Cards boundaries with everything else valid 
+    # Verifies if AmEx Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test36_ae_34_low_prefix(self):
@@ -338,7 +338,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(ae_l_prefix),
                         msg=''.format(credit_card_validator(ae_l_prefix)))
 
-    # Verifies if AmEx Cards boundaries with everything else valid 
+    # Verifies if AmEx Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test37_ae_34_upper_prefix(self):
@@ -348,7 +348,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(ae_u_prefix),
                         msg=''.format(credit_card_validator(ae_u_prefix)))
 
-    # Verifies if AmEx Cards boundaries with everything else valid 
+    # Verifies if AmEx Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test38_ae_37_low_prefix(self):
@@ -358,7 +358,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(credit_card_validator(ae_l_prefix),
                         msg=''.format(credit_card_validator(ae_l_prefix)))
 
-    # Verifies if AmEx Cards boundaries with everything else valid 
+    # Verifies if AmEx Cards boundaries with everything else valid
     # returns True
     # Picked using Boundary Testing
     def test39_ae_37_upper_prefix(self):
