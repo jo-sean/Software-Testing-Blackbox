@@ -257,11 +257,39 @@ class TestCase(unittest.TestCase):
 
     # Verifies if Visa Card with invalid lengths and check returns False
     # Picked using Boundary Testing
-    def test30_vs_length_long_check(self):
-        # Prefix is valid; length is 16, check is invalid
-        vs_combo = "45826548652114212"
-        self.assertFalse(credit_card_validator(vs_combo),
-                         msg=''.format(credit_card_validator(vs_combo)))
+    def test30_mc_51_55_low_prefix(self):
+        # Check and length are valid; prefix starts with 50 for Master Card
+        # (but no conflicts with other ranges)
+        mc_l_prefix = "5099999999999999"
+        self.assertFalse(credit_card_validator(mc_l_prefix),
+                         msg=''.format(credit_card_validator(mc_l_prefix)))
+
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
+    def test31_mc_51_55_upper_prefix(self):
+        # Check and length are valid; prefix starts with 56 for Master Card
+        # (but no conflicts with other ranges)
+        mc_u_prefix = "5600000000000000"
+        self.assertFalse(credit_card_validator(mc_u_prefix),
+                         msg=''.format(credit_card_validator(mc_u_prefix)))
+
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
+    def test32_mc_2221_2720_low_prefix(self):
+        # Check and length are valid; prefix starts with 2220 for Master Card
+        # (but no conflicts with other ranges)
+        mc_l_prefix = "2220999999999999"
+        self.assertFalse(credit_card_validator(mc_l_prefix),
+                         msg=''.format(credit_card_validator(mc_l_prefix)))
+
+    # Verifies if Master Cards with invalid prefix, valid check and length returns False
+    # Picked using Boundary Testing
+    def test33_mc_2221_2720_upper_prefix(self):
+        # Check and length are valid; prefix starts with 2721 for Master Card
+        # (but no conflicts with other ranges)
+        mc_u_prefix = "2721000000000000"
+        self.assertFalse(credit_card_validator(mc_u_prefix),
+                         msg=''.format(credit_card_validator(mc_u_prefix)))
 
 
 if __name__ == '__main__':
