@@ -85,7 +85,7 @@ class TestCase(unittest.TestCase):
 
     def test13_ae_valid_length(self):
         # Check and prefix are valid; length is 15
-        ae_valid = "34826548652112"
+        ae_valid = "348265486521123"
         self.assertTrue(credit_card_validator(ae_valid),
                         msg=''.format(credit_card_validator(ae_valid)))
 
