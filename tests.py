@@ -268,7 +268,7 @@ class TestCase(unittest.TestCase):
         self.assertFalse(credit_card_validator(vs_check),
                          msg=''.format(credit_card_validator(vs_check)))
 
-    # Inner boundaries
+    # Inner boundary check
 
     # Verifies if Visa Cards boundaries with everything else valid returns True
     # Picked using Boundary Testing
