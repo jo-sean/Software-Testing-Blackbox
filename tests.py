@@ -78,7 +78,7 @@ class TestCase(unittest.TestCase):
     # Picked using Boundary Testing
     def test9_ae_length_long(self):
         # Check and prefix are valid; length is 16
-        ae_long = "3482654865211135"
+        ae_long = "3722654865211457"
         self.assertFalse(credit_card_validator(ae_long),
                          msg=''.format(credit_card_validator(ae_long)))
 
@@ -86,15 +86,15 @@ class TestCase(unittest.TestCase):
 
     # Verifies if Visa Cards with everything valid returns True
     # Picked using Category Partition Testing
-    def test10_vs_valid_length(self):
+    def test10_vs_valid(self):
         # Check and prefix are valid; length is 16
-        vs_valid = "4582654865211421"
+        vs_valid = "4282654865211424"
         self.assertTrue(credit_card_validator(vs_valid),
                         msg=''.format(credit_card_validator(vs_valid)))
 
     # Verifies if Master Cards with everything valid returns True
     # Picked using Category Partition Testing
-    def test11_mc_51_55_valid_length(self):
+    def test11_mc_51_55_valid(self):
         # Check and prefix are valid; length is 16
         mc_valid = "5282654865211413"
         self.assertTrue(credit_card_validator(mc_valid),
@@ -102,7 +102,7 @@ class TestCase(unittest.TestCase):
 
     # Verifies if Master Cards with everything valid returns True
     # Picked using Category Partition Testing
-    def test12_mc_2221_2720_valid_length(self):
+    def test12_mc_2221_2720_valid(self):
         # Check and prefix are valid; length is 16
         mc_valid = "2222847589562356"
         self.assertTrue(credit_card_validator(mc_valid),
@@ -110,7 +110,7 @@ class TestCase(unittest.TestCase):
 
     # Verifies if American Express Cards with everything valid returns True
     # Picked using Category Partition Testing
-    def test13_ae_valid_length(self):
+    def test13_ae_valid(self):
         # Check and prefix are valid; length is 15
         ae_valid = "348265486521123"
         self.assertTrue(credit_card_validator(ae_valid),
@@ -244,6 +244,8 @@ class TestCase(unittest.TestCase):
         vs_check = "3722654865211457"
         self.assertFalse(credit_card_validator(vs_check),
                          msg=''.format(credit_card_validator(vs_check)))
+
+
 
 
 if __name__ == '__main__':
