@@ -115,7 +115,7 @@ class TestCase(unittest.TestCase):
         ae_valid = "348265486521123"
         self.assertTrue(credit_card_validator(ae_valid),
                         msg=''.format(credit_card_validator(ae_valid)))
-    
+
     # Verifies if American Express Cards with everything valid returns True
     # Picked using Category Partition Testing
     def test14_ae_37_valid(self):
@@ -131,7 +131,7 @@ class TestCase(unittest.TestCase):
     def test15_vs_low_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
         # (but no conflicts with other ranges)
-        vs_l_prefix = "3999999999999998"
+        vs_l_prefix = "3999999999999999"
         self.assertFalse(credit_card_validator(vs_l_prefix),
                          msg=''.format(credit_card_validator(vs_l_prefix)))
 
@@ -140,7 +140,7 @@ class TestCase(unittest.TestCase):
     def test16_vs_upper_prefix(self):
         # Check and length are valid; prefix starts with 5 for visa
         # (but no conflicts with other ranges)
-        vs_u_prefix = "5000000000000009"
+        vs_u_prefix = "5000000000000000"
         self.assertFalse(credit_card_validator(vs_u_prefix),
                          msg=''.format(credit_card_validator(vs_u_prefix)))
 
@@ -149,7 +149,7 @@ class TestCase(unittest.TestCase):
     def test17_mc_51_55_low_prefix(self):
         # Check and length are valid; prefix starts with 50 for Master Card
         # (but no conflicts with other ranges)
-        mc_l_prefix = "5099999999999992"
+        mc_l_prefix = "5099999999999999"
         self.assertFalse(credit_card_validator(mc_l_prefix),
                          msg=''.format(credit_card_validator(mc_l_prefix)))
 
@@ -158,7 +158,7 @@ class TestCase(unittest.TestCase):
     def test18_mc_51_55_upper_prefix(self):
         # Check and length are valid; prefix starts with 56 for Master Card
         # (but no conflicts with other ranges)
-        mc_u_prefix = "5600000000000003"
+        mc_u_prefix = "5600000000000000"
         self.assertFalse(credit_card_validator(mc_u_prefix),
                          msg=''.format(credit_card_validator(mc_u_prefix)))
 
@@ -167,7 +167,7 @@ class TestCase(unittest.TestCase):
     def test19_mc_2221_2720_low_prefix(self):
         # Check and length are valid; prefix starts with 2220 for Master Card
         # (but no conflicts with other ranges)
-        mc_l_prefix = "2220999999999991"
+        mc_l_prefix = "2220999999999999"
         self.assertFalse(credit_card_validator(mc_l_prefix),
                          msg=''.format(credit_card_validator(mc_l_prefix)))
 
@@ -176,7 +176,7 @@ class TestCase(unittest.TestCase):
     def test20_mc_2221_2720_upper_prefix(self):
         # Check and length are valid; prefix starts with 2721 for Master Card
         # (but no conflicts with other ranges)
-        mc_u_prefix = "2721000000000004"
+        mc_u_prefix = "2721000000000000"
         self.assertFalse(credit_card_validator(mc_u_prefix),
                          msg=''.format(credit_card_validator(mc_u_prefix)))
 
@@ -185,7 +185,7 @@ class TestCase(unittest.TestCase):
     def test21_ae_34_low_prefix(self):
         # Check and length are valid; prefix starts with 33 for American Express Card
         # (but no conflicts with other ranges)
-        ae_l_prefix = "339999999999993"
+        ae_l_prefix = "339999999999999"
         self.assertFalse(credit_card_validator(ae_l_prefix),
                          msg=''.format(credit_card_validator(ae_l_prefix)))
 
@@ -194,7 +194,7 @@ class TestCase(unittest.TestCase):
     def test22_ae_34_upper_prefix(self):
         # Check and length are valid; prefix starts with 35 for American Express Card
         # (but no conflicts with other ranges)
-        ae_u_prefix = "350000000000006"
+        ae_u_prefix = "350000000000000"
         self.assertFalse(credit_card_validator(ae_u_prefix),
                          msg=''.format(credit_card_validator(ae_u_prefix)))
 
@@ -203,7 +203,7 @@ class TestCase(unittest.TestCase):
     def test23_ae_37_low_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
         # (but no conflicts with other ranges)
-        ae_l_prefix = "369999999999996"
+        ae_l_prefix = "369999999999999"
         self.assertFalse(credit_card_validator(ae_l_prefix),
                          msg=''.format(credit_card_validator(ae_l_prefix)))
 
