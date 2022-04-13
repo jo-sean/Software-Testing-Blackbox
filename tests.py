@@ -242,19 +242,25 @@ class TestCase(unittest.TestCase):
     # Verifies if American Express Cards with invalid check, valid prefix and length returns False
     # Picked using Category Partition Testing
     def test28_ae_34_check(self):
-        vs_check = "3422654865211451"
+        vs_check = "342265486521146"
         self.assertFalse(credit_card_validator(vs_check),
                          msg=''.format(credit_card_validator(vs_check)))
 
     # Verifies if American Express Cards with invalid check, valid prefix and length returns False
     # Picked using Category Partition Testing
     def test29_ae_37_check(self):
-        vs_check = "3722654865211457"
+        vs_check = "372265486521148"
         self.assertFalse(credit_card_validator(vs_check),
                          msg=''.format(credit_card_validator(vs_check)))
 
     # Combinations
 
+    # Verifies if American Express Cards with invalid check and length, valid prefix returns False
+    # Picked using Category Partition Testing
+    def test30_ae_34_length_check(self):
+        vs_check = "3722654865211457"
+        self.assertFalse(credit_card_validator(vs_check),
+                         msg=''.format(credit_card_validator(vs_check)))
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
