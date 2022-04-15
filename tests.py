@@ -270,7 +270,8 @@ class TestCase(unittest.TestCase):
 
     # Inner boundary check
 
-    # Verifies if Visa Cards boundaries with everything else valid returns True
+    # Verifies if Visa Cards boundaries with everything else valid
+    # returns True
     # Picked using Boundary Testing
     def test30_vs_low_prefix(self):
         # Check and length are valid; prefix starts with 3 for visa
@@ -279,7 +280,8 @@ class TestCase(unittest.TestCase):
         self.assertFalse(credit_card_validator(vs_l_prefix),
                          msg=''.format(credit_card_validator(vs_l_prefix)))
 
-    # Verifies if Visa Cards boundaries with everything else valid returns True
+    # Verifies if Visa Cards boundaries with everything else valid
+    # returns True
     # Picked using Boundary Testing
     def test31_vs_upper_prefix(self):
         # Check and length are valid; prefix starts with 5 for visa
